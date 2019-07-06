@@ -9,6 +9,11 @@
     function numeroMisterioso(){
         var playerUm = pegaNumeroAleatorio(0, 10);
         var chute = pegaNumero("Informe o chute");
+
+        while (chute < 0 || chute > 10){
+            chute = pegaNumero("Por favor! Informe um chute entre 0 e 10"); 
+            /*if só repete uma vez; while - repete o pop-up*/
+        }
         if (chute == playerUm){
             mostra(`
             Parabéns, você acertou! O número misterioso era ${playerUm}.
