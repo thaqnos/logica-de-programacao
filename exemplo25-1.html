@@ -12,12 +12,12 @@
         var invalidos = 0;
 
         while (chute < 0 || chute > 10){
-            chute = pegaNumero("Por favor! Informe um chute entre 0 e 10");
             invalidos = invalidos +1;
             if(invalidos == 3){
                 alert("Errou demais, chega pra vc")
                 break;
             }
+        chute = pegaNumero("Por favor! Informe um chute entre 0 e 10"); 
         }
         if (chute == playerUm){
             mostra(`

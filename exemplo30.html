@@ -1,0 +1,16 @@
+<meta charset="UTF-8">
+<h1>Lista de Nomes</h1>
+
+<script>
+    var lista = [];
+    while(lista.length < 10){
+        var nome = prompt(`
+        Por gentileza, informe 1 nome nesta lista
+        `)
+        lista.push(nome)
+    }
+
+    document.write(`
+    ${lista.join("-")}
+    `)
+    </script>
