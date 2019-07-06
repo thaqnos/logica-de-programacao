@@ -15,6 +15,14 @@
                 alert("Por favor, digite um NÚ-ME-ROOOOOOO")
                 campoNumero.value = ""
                 campoNumero.focus()
+            } else {
+                var multiplicador = 1;
+                mostrador.innerHTML="" /*limpa antes de exibir o novo resultado após digitar*/
+                while (multiplicador <= 10){
+                    var resultado = numero * multiplicador;
+                    mostrador.innerHTML += `<br> ${numero} x ${multiplicador} = ${resultado} <br>`
+                    multiplicador = multiplicador + 1;                    
+                }                
             }
         }
     </script>
