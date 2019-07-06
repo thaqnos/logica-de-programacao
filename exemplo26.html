@@ -1,0 +1,13 @@
+<meta charset="UTF-8">
+<h1> Máquina de Café </h1>
+<p id="mostrador"> Seu café está sem açúcar! </p>
+
+<script>
+    var colheresAcucar = 0;
+    while (confirm("Quer mais açúcar?") == true){
+        colheresAcucar = colheresAcucar + 1
+        mostrador.innerHTML=`Seu café agora tem ${colheresAcucar} colheres de açúcar.`
+    } 
+    /*utiliza valores boleanos (true;false), o botão ok é "sim" e cancelar "não"*/
+    
+</script>
