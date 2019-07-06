@@ -3,14 +3,15 @@
 
 <script>
     var lista = [];
-    while(lista.length < 10){
+    while(lista.length < 10){ /*quantidade de itens na lista (.length) */
         var nome = prompt(`
         Por gentileza, informe 1 nome nesta lista
         `)
-        lista.push(nome)
+        lista.push(nome) /*adiciono nome na lista com .push*/
     }
 
     document.write(`
-    ${lista.join("-")}
+    ${lista.join("<br>")}
     `)
+    /*.join adicionar separador*/
     </script>

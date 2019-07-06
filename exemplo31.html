@@ -1,0 +1,48 @@
+<meta charset="UTF-8">
+<h1>Loteria</h1>
+Quantidade de números: <br>
+<input id="campoQuantidade" type="text" placeholder="Adicione um número">
+<button onclick="jogar()">Jogar</button>
+
+<script src="js/pegaNumero.js"></script>
+<script src="js/mostra.js"></script>
+<script src="js/pegaNumeroAleatorio.js"></script>
+<script>
+    function jogar(){
+        var quantidade = campoQuantidade.value;
+        var lista = [];
+        if(isNaN (quantidade) || quantidade < 1 || quantidade > 60){
+            alert("Digite um número entre 1 e 60")
+            campoQuantidade.value = ""
+            campoQuantidade.focus()
+        }
+        else{
+            while(lista.length < quantidade){
+            var playerUm = pegaNumeroAleatorio(1, 60);
+            lista.push(playerUm)
+        }
+            var chute = pegaNumero("Informe o chute");
+            var invalidos = 0;
+            
+            while (chute < 1 || chute > 60){
+                invalidos = invalidos +1;
+                if(invalidos == 3){
+                    alert("Errou demais, chega pra vc")
+                    break;
+                }
+                chute = pegaNumero("Por favor! Informe um chute entre 1 e 60"); 
+            }
+            if (chute == playerUm){
+                mostra(`
+                Parabéns, você acertou! O número misterioso era ${playerUm}.
+                `)
+            }
+            else{
+                mostra(`
+                Que pena, você errou! O número misterioso era ${playerUm}.            
+                `)
+            }
+        }
+        
+    }
+</script>
