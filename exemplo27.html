@@ -1,0 +1,20 @@
+<met charset="UTF-8">
+    <h1>Tabuada</h1>
+    Número: <br>
+    <input id="campoNumero" type="text" placeholder="Adicione um número">
+    <button onclick="calcular()"> Calcular </button>
+    <br>
+    <p id="mostrador">
+        Informe o número para exibir a tabuada.
+    </p>
+    
+    <script>
+        function calcular(){
+            var numero = campoNumero.value;
+            if (isNaN(numero) == true){
+                alert("Por favor, digite um NÚ-ME-ROOOOOOO")
+                campoNumero.value = ""
+                campoNumero.focus()
+            }
+        }
+    </script>
