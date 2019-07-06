@@ -1,0 +1,23 @@
+<!--array-->
+<!-- .length exibe a quantidade de itens numa lista-->
+<!--.join define como um array deve exibir seus itens usando um separador (o join não aplica o separador no último item-->
+<!-- ul - unordered list - lista não ordenada / li - list item-->
+<!-- ol - ordered list - lista ordenada / li - list item-->
+
+<meta charset="UTF-8">
+<h1>Lista de supermercado</h1>
+
+<script>
+    var lista = ["pão", "coca", "leite", "arroz", "pó de café"];
+    alert("O primeiro item da lista é: " + lista[0]);
+    alert("O último item da lista é: " + lista[4]);
+
+    document.write(`
+    Minha lista de compra tem ${lista.length} itens: <br>
+    <ol>
+        <li>
+    ${lista.join("</li> <li>")}
+        </li>
+    </ol>
+    `)
+</script>

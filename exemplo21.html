@@ -1,0 +1,32 @@
+<!--
+   1) Pedir para o usuário informar a idade, guardar a informação;
+   2) Se a idade for entre 12-17 anos, mostrar: Plano teen;
+   3) Se a idade for entre 18-19 anos, mostrar: Plano profissional;
+   4) Se a idade for 30 ou mais, mostrar: Plano experience;
+   5) Caso contrário, mostrar: não há planos pra você.
+
+   && - e
+   || - ou (pelo menos uma condição tem que ser verdadeira)
+   ! - não (negação)
+   == - Igualdade
+   != - diferença, não igualdade
+   O "ELSE" SÓ NEGA O "IF" ANTERIOR
+-->
+
+<meta charset="UTF-8">
+<h1>Planos de Viagem</h1>
+<script>
+    var idade = prompt("Informe a sua idade");
+        if(idade >= 12 && idade <= 17){
+            document.write("Plano teen");
+        }
+       else if (idade >= 18 && idade <= 29){
+            document.write("Plano profissional");
+        }
+       else if (idade >= 30){
+            document.write("Plano experience");
+        }
+        else{
+            document.write("Não há planos para você!");
+        }
+</script>

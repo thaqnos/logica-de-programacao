@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+<!--
+João - 1993 ✓
+Regina - 1997 ✓
+Pedro - 1985 ✓
+-->
+<h1>Média das idades</h1>
+<script>
+    var anoAtual = new Date().getFullYear;
+    var idadeJoao = anoAtual-1993;
+    var idadeRegina = anoAtual-1997;
+    var idadePedro = anoAtual-1985;
+    var somaIdades = idadeJoao + idadeJoao + idadePedro;
+    var mediaIdades = somaIdades / 3;
+
+    document.write(`
+    A média da idade de João, Regina e Pedro é: ${mediaIdades.toFixed(1)}
+    `)
+</script>

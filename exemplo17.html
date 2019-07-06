@@ -1,0 +1,61 @@
+<meta charset="UTF-8">
+<h1>Cadastramento de endereço</h1>
+Nome<br>
+<input type="text" size ="30" placeholder="Insira seu nome" id="campoNome">
+<br><br>
+
+<!-- Inserir automaticamente o endereço após clicar o botão "buscar endereço" -->
+CEP<br>
+<input type="text" size ="30" placeholder="Insira seu CEP" id="campoCep"> 
+<button onclick="buscaEndereco()">Buscar endereço</button>
+<br><br>
+<!--fim-->
+
+Endereço<br>
+<input type="text" size ="30" placeholder="Insira seu endereço" id="campoEndereco">
+<br><br>
+
+Bairro<br>
+<input type="text" size ="30" placeholder="Insira seu bairro" id="campoBairro">
+<br><br>
+
+Cidade<br>
+<input type="text" size ="30" placeholder="Insira sua cidade" id="campoCidade">
+<br><br>
+
+Estado<br>
+<input type="text" size ="30" placeholder="Insira seu Estado" id="campoEstado">
+<br><br>
+
+<button onclick="cadastrar()"> Cadastrar </button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js"></script>
+<script src="js/buscaCep.js"></script>
+
+<script>
+    VMasker(campoCep).maskPattern("99999-999");
+    function cadastrar (){
+        var nome = campoNome.value;
+        var cep = campoCep.value;
+        var endereco = campoEndereco.value;
+        var bairro = campoBairro.value;
+        var cidade = campoCidade.value;
+        var estado = campoCidade.value;
+
+        document.write (`
+        <h2> ${nome}, seu endereço é:</h2>
+        ${endereco}, ${bairro}, ${cep} - ${cidade}/${estado}
+        `)
+    }
+
+    function buscaEndereco(){
+        var cep = campoCep.value.replace("-", "");
+        var dados = buscaCep(cep);
+        campoEndereco.value = dados.endereco;
+        campoBairro.value = dados.bairro;
+        campoCidade.value = dados.cidade;
+        CampoEstado.value = dados.estado;
+    }
+
+</script>
+

@@ -1,0 +1,47 @@
+<!--
+    1) ao clicar no botão, pegar o valor digitado na caixa de texto e guardar.
+    2) adicionar o item digitado numa lista.
+    3) exibir um alerta de mesagem: "Item___adicionado com sucesso".
+    4) Limpar a caixa de texto.
+    5) Exibir a lista de itens no parágrafo "mensagem" na seguinte estrutura:
+        Sua lista de compras tem x itens. Eles são:
+        1. 
+        2.
+        3.
+        4...
+        .push - jogar o item na lista
+        campoItem.value=""; (limpa o campo de texto)
+-->
+
+<meta charset="UTF-8">
+
+<h1>Monte sua lista de compras</h1>
+
+Nome do item<br>
+    <input type="text" size ="30" placeholder="Digite seus itens" id="campoItem"/><br>
+    <button onclick="adicionar()"> Adicionar </button>
+
+<p id="mensagem"> Sua lista está vazia :( </p>
+
+<script>
+    var lista=[];
+    
+    function adicionar(){
+        var item = campoItem.value;
+        lista.push(item);
+        alert(`
+        Item(s) ${item} adicionado(s) com sucesso! ^-^
+        `);
+
+        campoItem.value="";
+
+        mensagem.innerHTML=`
+        Sua lista de compra possui ${lista.length} item(s). Aqui está: <br>
+        <ol>
+            <li>
+                ${lista.join("</li> <li>")}
+            </li>
+        </ol>
+        `
+    }
+</script>

@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+
+<h1>Função com Parâmetro - Confeitaria</h1>
+
+<button onclick="fazerBolo('chocolate', 3, 5)"><b>Bolo de chocolate</b></button>
+<!-- Na função deve-se seguir a ordem das variáveis, pode apenas definir valor para essas variáveis -->
+
+<button onclick="fazerBolo('laranja')"><b>Bolo de laranja</b></button>
+<button onclick="fazerBolo('fubá')"><b>Bolo de fubá</b></button>
+
+<script>
+// podemos definir valores padrão para o parâmetro, aqui por exemplo, definimos 3 ovos por padrão e 2 copos de leite
+
+function fazerBolo (sabor, ovos = 3, copoDeLeite = 2){
+    document.write(`
+    Aqui está seu bolo de ${sabor} feito com ${ovos} ovo(s) e ${copoDeLeite} copo(s) de leite.
+    `)
+}
+</script>

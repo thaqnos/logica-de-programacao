@@ -1,0 +1,33 @@
+<!--
+Times!
+1) Crie um programa que peça para o usuário informar o nome de DOIS TIMES e o número de gols de cada time;
+2) Com essas informações, exiba na tela o nome do time vencedor;
+3) Caso o número de gols seja igual, exiba:
+    "Empate!"
+-->
+
+<meta charset="UTF-8">
+<h1>Times</h1>
+
+<script>
+    var timeUm = prompt("Insira o nome do 1º time");
+    var timeUmGols = prompt("Insira quantos gols o 1º time fez");
+    var timeDois = prompt("Insira o nome do 2º time");
+    var timeDoisGols = prompt("Insira quantos gols o 2º time fez");
+
+    if (timeUmGols > timeDoisGols){
+        document.write (`
+        ${timeUm} é o vencedor!
+        `)
+    }
+    else if (timeDoisGols > timeUmGols){
+        document.write(`
+        ${timeDois} é o vencedor!
+        `)
+    }
+    else {
+        document.write(`
+        Empate!
+        `)
+    }
+</script>

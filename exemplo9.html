@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<!--
+1) Pedir ao usuário que informe seu nome;
+2) Pedir o sobrenome do usuário;
+3) Pedir o e-mail do usuário;
+4) Exibir a seguinte mensagem: 
+"Seus dados de cadastro são:
+Nome completo:
+E-mail: "
+-->
+
+<h1>Cadastramento</h1>
+<script>
+    var nome = prompt("Informe o seu nome ");
+    var sobrenome = prompt(" Informe seu sobrenome");
+    var email = prompt("Informe seu e-mail");
+    var nomeCompleto = nome + " " + sobrenome;
+
+document.write(`
+    <strong>Aqui estão seus dados cadastrais: </strong> <br>
+    <br>
+    <b>Nome completo</b>: ${nomeCompleto} <br>
+    <b>E-mail</b>: ${email} <br>
+`)
+</script>

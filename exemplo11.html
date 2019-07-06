@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+<h1>Carro vs. Uber</h1>
+<h2>Carro</h2>
+
+    <script src="js/formataMoeda.js"></script>
+    <script src="js/pegaNumero.js"></script>
+
+    <script>
+    var distancia = pegaNumero("Informe a distância");
+    var autonomia = pegaNumero("Informe a autonomia do veículo");
+    var precoGasolina = pegaNumero("Informe o preço da gasolina");
+    var precoEstacionamento = pegaNumero("Informe o preço do estacionamento");
+    var gastoGasolina = (distancia / autonomia) * precoGasolina;
+    var total = gastoGasolina + precoEstacionamento;
+    //substituí o que vem após a variável: 
+    //parseFloat (prompt(mensagem).replace(",", ".")); por uma função que pega o número
+
+    document.write(`
+        <ul>
+        <li> Preço da Gasolina: ${formataMoeda (precoGasolina)} <br></li>
+        <li> Gasto com Gasolina: ${formataMoeda(gastoGasolina)} <br></li>
+        <li> Estacionamento: ${formataMoeda(precoEstacionamento)} <br></li>
+        <li> Total: ${formataMoeda(total)} <br></li>
+        </ul>
+    `)
+    //substituí .toFixed(2).replace(",", ".") para a função
+    </script>
+
+<h2>Uber</h2>
+    <script>
+    var velocidadeMedia = 25; // velocidade média
+    var gastoKm = distancia * 1.40; //km rodados
+    var tempoEmMinutos = (distancia / velocidadeMedia) * 60; // transformar tempo em minutos
+    var gastoTempo = tempoEmMinutos * 0.26; //preço por minuto na viagem
+    var totalUber = 0.75 + 2 + gastoKm + gastoTempo; //soma de todos os gastos
+
+    document.write(`
+    <ul>
+    <li> Total: ${formataMoeda(totalUber)} </li>
+    </ul>
+    `)
+    </script>

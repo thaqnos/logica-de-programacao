@@ -1,0 +1,46 @@
+<!--
+  ✓  1) título: Lista de Convidados
+  ✓  2) botão: adicionar nome
+  ✓  3) parágrafo: 
+        id="meusConvidados"
+        conteúdo: Sua lista de convidados está vazia.
+  ✓ 4) Ao clicar no botão, pedir para o usuário informar um NOME, guardar essa informação.
+  ✓ 5) Adicione esse nome em uma lista
+  ✓ 6) exiba um alerta:
+        Convidado adicionado à lista de casamento!
+  ✓ 7) Exiba a lista de convidados no parágrafo "meusConvidados" da seguinte forma:
+        Seus convidados são:
+        1.
+        2.
+        3.
+        4.
+-->
+<meta charset="UTF-8">
+<h1>Lista de convidados</h1>
+
+Adicione o nome de um convidado <br> <br>
+
+<button onclick="adicionarConvidado()">Adicionar nome</button>
+
+<p id="meusConvidados">Sua lista de convidados está vazia.<br>
+    Por favor, preencha o campo indicado.</p>
+
+    <script>
+        var lista=[];
+        function adicionarConvidado(){
+            var nomeConvidado = prompt("Por favor, informe o nome do convidado");
+            lista.push(nomeConvidado);
+            alert(`
+            O convidado ${nomeConvidado} foi adicionado à lista! 
+            `);
+        meusConvidados.innerHTML=`
+        Seus convidados são: <br>
+        <ol>
+            <li>
+                ${lista.join("</li> <li>")}
+            </li>
+        </ol>
+        `
+        }
+        
+    </script>

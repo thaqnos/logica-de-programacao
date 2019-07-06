@@ -1,0 +1,37 @@
+<!--
+    PARTICIPAÇÃO DE LUCROS
+    1) Título da página: Participação nos lucros;
+    2) Peça para o usuário informar o nome dele;
+    3) Peça o usuário informar o salário dele;
+    4) SE o salário for maior ou igual do que R$7.000,00, exibir:
+        "Desculpe, nomeUsuario, você não tem participação dos lucros!
+    5) SE o salário estiver entre R$ 3500 e 6999, exibir:
+        "nomeUsuario", você tem direito à 20% da participação dos lucros!
+    6) CASO CONTRÁRIO exibir:
+        "nomeUsuario", você tem direito à 30% da participação dos lucros
+
+    Neste caso, else vai sem nenhuma condição, apenas ele.
+-->
+<meta charset="UTF-8">
+<h1> Participação dos lucros</h1>
+
+<script src="js/pegaNumero.js"></script>
+<script>
+    var nomeUsuario = prompt("Informe o seu nome");
+    var salarioUsuario = pegaNumero("Informe o seu salário");
+    if (salarioUsuario >= 7000){
+        document.write(`
+        Desculpe ${nomeUsuario}, você não tem participação dos lucros!
+        `)
+    }
+    else if (salarioUsuario >= 3500 && salarioUsuario <= 6999){
+        document.write(`
+        ${nomeUsuario}, você tem direito à 20% da participação dos lucros!
+        `)
+    }
+    else{
+        document.write(`
+        ${nomeUsuario}, você tem direito à 30% da participação dos lucros.
+        `)
+    }
+</script>

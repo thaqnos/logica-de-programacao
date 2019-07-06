@@ -1,0 +1,15 @@
+<meta charset="UTF-8">
+
+<h1>Salário + Bonus</h1>
+
+<script>
+    var nomeUsuario = prompt("Qual o seu nome?");
+    var valorSalario = parseFloat (prompt("Qual o valor do seu salário?").replace(",", "."));
+    var valorBonus = parseFloat (prompt("Qual foi o valor do bônus?").replace(",", "."));
+    var valores = valorSalario + valorBonus;
+
+    document.write(`
+    Olá, <i>${nomeUsuario}</i> <br>
+    Seu salário total é de R$${valores}.
+    `)
+</script>

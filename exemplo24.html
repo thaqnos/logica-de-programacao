@@ -1,0 +1,43 @@
+<!--
+    login!
+    1) quando o usuário clicar no botão ENTRAR, pegar os valores dos campos de usuário e senha e guardar
+    2) se o usuário for igual "caelum" E a senha for igual a "caelum123" escrever na tela:
+        LOGIN EFETUADO COM SUCESSO
+    3) caso contrário, exibir um alerta:
+        LOGIN E SENHA INCORRETOS
+Neste caso: a função e a condição deve estar no mesmo campo!
+-->
+<meta charset="UTF-8">
+
+<h1>Login</h1>
+Nome <br>
+<input type="text" size ="30" placeholder="Insira seu nome" id="campoUsuario">
+<br><br>
+
+Senha <br>
+<input type="password" size ="30" placeholder="Insira sua senha" id="campoSenha">
+<br><br>
+
+<!--A função deve ser chamada com nome()-->
+<button onclick="login()"> Entrar </button>
+
+<script>
+    function login(){
+    var usuario = campoUsuario.value;
+    var senha = campoSenha.value;
+
+if (usuario == "caelum" && senha == "caelum123"){
+    alert(`
+    Login efetuado com sucesso!
+    `)
+}
+else {
+    alert(`
+    Login e senha incorretos!
+    `)
+}
+//limpar campos
+campoUsuario.value="";
+campoSenha.value="";
+}
+</script>

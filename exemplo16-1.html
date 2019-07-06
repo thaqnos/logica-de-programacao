@@ -1,0 +1,65 @@
+<meta charset="UTF-8">
+
+<h1>Cadastramento - Academia</h1>
+Por favor, preencha os dados do formulário abaixo para realizar seu cadastro:
+<br><br>
+Nome<br>
+<input type="text" size ="30" placeholder="Insira seu nome" id="campoNome">
+<br><br>
+
+Peso<br>
+<input type="text" size ="30" placeholder="Insira seu peso" id="campoPeso">
+<br><br>
+
+Altura<br>
+<input type="text" size ="30" placeholder="Insira sua altura" id="campoAltura">
+<br><br>
+
+Data de nascimento<br>
+<input type="text" size ="30" placeholder="Insira sua data de nascimento" id="campoNascimento">
+<br><br>
+
+<input type="checkbox" id="campoSouCardiaco"/> Tenho problemas cardíacos
+<br><br>
+
+<button onclick="cadastrar()"> Cadastrar </button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js"></script>
+<script src="js/libIdade.js"></script>
+
+<script>
+    VMasker(campoNascimento).maskPattern("99/99/9999");
+    function cadastrar(){
+        var nome = campoNome.value;
+        var peso = campoPeso.value;
+        var altura = campoAltura.value;
+        var nascimento = campoNascimento.value;
+        var dataPedacos = nascimento.split("/");
+        var dia = dataPedacos [0];
+        var mes = dataPedacos [1];
+        var ano = dataPedacos [2];
+        var idade = calculaIdade(dia, mes, ano);
+        var souCardiaco = campoSouCardiaco.checked;
+        var frase = "";
+
+    if (idade < 14 || souCardiaco == true){
+        frase = "Precisa de acompanhamento médico"
+        }
+    else {
+        frase = "Não precisa de acompanhamento médico"
+    }
+
+        document.write(`
+        <h2>Seus dados cadastrais são:</h2>
+            <hr>
+            <ul>
+                <li>Nome: ${nome} </li>
+                <li>Peso: ${peso} kg </li>
+                <li>Altura: ${altura} </li>
+                <li>Data de nascimento: ${nascimento} </li>
+                <li>Sua idade: ${idade} anos </li>
+            </ul>
+            <b>${frase}</b>
+        `)
+    }
+</script>
